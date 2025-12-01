@@ -543,9 +543,10 @@ background:var(--bg-color-2);
 
   /* layout */
   margin: 0 auto;
-  margin-bottom: 5%;
+  margin-bottom: 8%;
   margin-left: 24%;
   margin-top: 1% !important;
+  
 }
 
 
@@ -581,7 +582,7 @@ background:var(--bg-color-2);
   margin: 0 auto;
   padding-left: 10%;
   padding-right: 10%;
-  padding-bottom: 6rem;
+  padding-bottom: 10rem;
  
 }
 
@@ -636,11 +637,12 @@ background:var(--bg-color-2);
 @media (max-width: 768px) {
   .menu-card {
     max-width: 260px;
+    max-height: 400px;
   }
   .menu-frame {
     width: 80%;
     margin-left: 8%;
-    margin-top: -8%;
+    margin-top: 1%;
     transform: rotate(8deg);
   }
 }
@@ -649,11 +651,12 @@ background:var(--bg-color-2);
 @media (max-width: 480px) {
   .menu-card {
     max-width: 240px;
+    max-height: 400px;
   }
   .menu-frame {
     width: 85%;
     margin-left: 5%;
-    margin-top: -6%;
+    margin-top: 1%;
   }
 }
 
