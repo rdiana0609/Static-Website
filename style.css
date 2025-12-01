@@ -582,7 +582,7 @@ background:var(--bg-color-2);
   margin: 0 auto;
   padding-left: 10%;
   padding-right: 10%;
-  padding-bottom: 10rem;
+  padding-bottom: 6rem;
  
 }
 
@@ -645,6 +645,9 @@ background:var(--bg-color-2);
     margin-top: 1%;
     transform: rotate(8deg);
   }
+  .mySwiper{
+    padding-bottom: 20rem;
+  }
 }
 
 /* Small phones */
@@ -657,6 +660,9 @@ background:var(--bg-color-2);
     width: 85%;
     margin-left: 5%;
     margin-top: 1%;
+  }
+  .mySwiper{
+    padding-bottom: 20rem;
   }
 }
 
