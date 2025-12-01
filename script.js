@@ -23,8 +23,9 @@ const swiper = new Swiper('.mySwiper', {
     clickable: true,
   },
   breakpoints: {
-    0: { slidesPerView: 1 , spaceBetween: 5},
-    768: { slidesPerView: 2 },
+    0: { slidesPerView: 1 , spaceBetween: 6},
+    400:{ slidesPerView: 2, spaceBetween: 10 },
+    768: { slidesPerView: 2, spaceBetween: 10 },
     992: { slidesPerView: 3 }
   }
 });
