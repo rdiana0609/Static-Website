@@ -646,7 +646,11 @@ background:var(--bg-color-2);
     transform: rotate(8deg);
   }
   .mySwiper{
-    padding-bottom: 20rem;
+    padding-bottom: 100rem;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
   }
 }
 
@@ -662,7 +666,11 @@ background:var(--bg-color-2);
     margin-top: 1%;
   }
   .mySwiper{
-    padding-bottom: 20rem;
+    padding-bottom: 10rem;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
   }
 }
 
