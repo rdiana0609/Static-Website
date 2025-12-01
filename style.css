@@ -1,0 +1,818 @@
+:root {
+  /* colors */
+  --primary-color: rgba(235, 246, 66, 1);
+  --secondary-color: rgba(238, 79, 56, 1);
+  --bg-color-1: rgba(248, 242, 218, 1);
+  --bg-color-2: rgba(243, 195, 245, 1);
+  /* --text-color: rgba(79, 10, 0, 1);
+  */
+   --text-color: var(--secondary-color);
+   --text-color-2 : rgba(79, 10, 0, 1);
+  /*override Bootstrap colors */
+  --bs-primary: var(--bg-color-2);
+  --bs-secondary: var(--bg-color-2);
+  --bs-body-bg: var(--bg-color-2);
+  --bs-body-color: var(--text-color);
+
+  /*fonts*/
+  --font-main: 'Assistant', sans-serif;
+  --font-headings: 'Alumni Sans Inline One';
+}
+body {
+  font-family: 'Assistant', sans-serif;
+}
+h1, h2 {
+font-family: 'Alumni Sans Inline One';
+}
+.my-navbar{
+    background-color: rgba(235, 246, 66, 1);
+    border-bottom: 0.3rem solid var(--secondary-color) ;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.navbar-brand{
+    font-family: var(--font-headings);
+    font-size:xxx-large;
+    height: fit-content;
+    padding: 0;
+    padding-left: 1.5rem;
+    line-height: 1; /*controls vertical spacing inside text element*/
+    color: var(--secondary-color);
+    
+}
+.navbar-nav{
+    font-family: var(--font-main);
+    font-weight: bold;
+    font-size:larger;
+    height: fit-content;
+    padding: 0;
+    
+    line-height: 1;
+    align-items: center;
+    
+}
+.navbar-nav .nav-link{
+    color: var(--secondary-color);
+    text-decoration: none;         /* remove default underline */
+    transition: color 0.3s, border-bottom 0.3s;
+    position: relative;
+    padding-bottom: 4px;  
+}
+
+.navbar-nav .nav-link {
+  color: var(--secondary-color); /* same for all links */
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px; /* space for underline */
+}
+
+/* Hover underline */
+.navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0.1rem;
+  background: var(--secondary-color);
+  transition: width 0.3s;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%; /* animate underline on hover */
+}
+
+/* Active link: bold, underline visible */
+.navbar-nav .nav-link,
+.navbar-nav .nav-link.active {
+  color: var(--secondary-color) !important;
+  font-weight: bolder;
+}
+
+.navbar-nav .nav-link.active::after {
+  width: 100%; /* underline stays for active */
+}
+.navbar-toggler {
+  border: none; /* optional, remove border */
+}
+
+.navbar-toggler-icon {
+  background-image: none; /* remove default gray icon */
+  width: 30px;
+  height: 3px;
+  background-color: red; /* your desired color */
+  display: block;
+  position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: var(--secondary-color) ;/* same color */
+  left: 0;
+  transition: 0.3s;
+}
+
+.navbar-toggler-icon::before {
+  top: -10px;
+}
+
+.navbar-toggler-icon::after {
+  top: 10px;
+}
+.navbar-toggler {
+  border: none; /* optional */
+  -webkit-tap-highlight-color: transparent; /* remove mobile tap highlight */
+}
+
+.navbar-toggler:focus {
+  outline: none; /* remove outline */
+  box-shadow: none; /* remove shadow */
+}
+
+/* .hero-section {
+  background-image: url('images/hero-section.png'); 
+  background-size:cover;
+  border-bottom: 1.5rem solid var(--secondary-color) ;
+  background-position:bottom;
+  height: 80vh; 
+  position: relative;
+  color: #f5f542; 
+  display: flex;
+  align-items: center; 
+}  */
+
+/* HERO background image */
+.hero-section {
+  height: 80vh;                  /* Similar tall hero style */
+  background-image: url("images/hero-section.png");
+  border-bottom: 1rem solid var(--secondary-color) ;
+  background-size: cover;
+  background-position:left;
+  position: relative;
+}
+
+/* STAR shape positioned behind the text */
+.star-text-wrapper {
+  max-width: 35rem;             /* match size you want */
+}
+
+/* STAR image styling */
+.star-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;                   /* behind text */
+}
+
+/* Text ON TOP of the star */
+.star-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;                   /* above star */
+  padding: 0.5rem 0.1rem;
+  color: var(--text-color);     /* your color variables */
+}
+.star-content h1{
+    font-size: clamp(1.8rem, 3vw, 3.5rem);
+    margin-top: 1rem;
+    line-height: 1;
+    margin-bottom: 0;
+}
+.star-content p {
+     font-size: clamp(1rem, 1.5vw, 1.6rem);
+     margin-top: 0;
+  margin-bottom: 0.1rem;
+}
+
+
+.bg-parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+/* Main section background */
+.about-section {
+  margin-top: -2%;
+  
+  background-color: var(--bg-color-1);
+}
+
+/* Card container */
+.about-card {
+  background-color: var(--bg-color-1);
+  color: var(--text-color);
+  font-size: clamp(1rem, 3vw, 2rem);
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+/* Highlighted bold words */
+.about-card .highlight {
+  
+  font-family: var(--font-headings);
+  font-size: clamp(1.2em, 1.5vw, 1.5rem);
+  color: var(--secondary-color);
+}
+.about-card .text-center{
+    font-size: clamp(2.5rem,4vw,4rem);
+}
+/* Large screen star image */
+/* .star-img {
+  max-width: 35 rem;
+} */
+/* Wrapper controls the positioning area */
+.star-wrapper {
+  position: relative;
+  height: 28rem;  /* adjust for spacing, match your design */
+}
+
+/* Both stars */
+.star-img {
+  position: absolute;
+  width: 50%;        /* responsive scaling */
+  max-width: 50%;  /* avoids getting too big */
+  height: auto;
+}
+
+/* TOP star */
+.star-1 {
+  top: 20%;
+  right: 50%;
+  scale: 160%;
+  transform: translate(10%, -10%);  
+}
+
+/* BOTTOM star */
+.star-2 {
+  bottom: 0;
+  right: -13.2%;
+  transform: translate(10%, 10%); 
+  scale: 90%; /* overlap effect */
+}
+
+/* .col-lg-6.text-center.position-relative {
+  position: relative;
+} */
+/*
+.star-1 {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  width: 65%;
+  z-index: 2;  
+}
+*/
+/* Second star (bottom-right corner) */
+/*
+.star-2 {
+  position: absolute;
+  bottom: -5%;
+  right: 0;
+  width: 50%;
+  z-index: 1;  
+  opacity: 0.95;
+}
+*/
+/* ------------------------------------ */
+/* MOBILE VERSION */
+/* ------------------------------------ */
+@media (max-width: 1353px) {
+
+  .about-section {
+    padding: 0;
+  }
+
+  /* Make background full-width peppers image */
+  .about-section {
+    background-image: url("images/peppers-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+  }
+
+  /* Make the card centered and readable */
+  .about-card {
+    background: var(--bg-color-1);
+    margin-top: 2rem;
+  }
+
+  /* Hide star image on mobile */
+  .star-img {
+    display: none;
+  }
+}
+.filters-container{
+  padding-top: 1%;
+}
+.filters-box{
+  
+  border-width: 2px 0 !important; /* 1px top and bottom, 0 left and right */
+  border-style: solid !important; /* must have a style */
+  border-color: var(--secondary-color) !important;
+  border-radius: 0 !important;
+}
+.menu-section .container-fluid{
+    background-color: var(--bg-color-2);
+    
+}
+.menu-section .text-center{
+  background-color:  var(--primary-color);
+    font-size: clamp(3rem, 3.5vw, 5rem);
+    
+}
+.filters {
+border-color:var(--secondary-color); 
+background:var(--bg-color-2);
+}
+.filters-label {
+    border-color:#e44d3a; 
+    background:#f1ccf8;
+}
+.filter-btn {
+  border-radius: 25px;
+  border: 2px solid var(--secondary-color)!important;
+  background: transparent;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  padding: 5px 20px;
+}
+
+.filter-btn.active {
+  background: var(--secondary-color) !important;
+  color: var(--bg-color-1) !important;
+}
+
+.card-box {
+  padding: 25px;
+  border: 2px solid #e44d3a;
+  border-radius: 12px;
+  background: #fff;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+ .swiper-wrapper{
+ width: 100%;
+
+ display: flex !important;
+ align-items:flex-start!important;
+  }
+  /* .swiper-slide{
+    
+  } */
+
+
+/* MENU SECTION */
+.menu-section {
+  background-color: var(--primary-color);
+  margin: 0 !important;
+
+}
+.menu-cards{
+  background-color: var(--bg-color-2);
+}
+/* FILTER BOX STYLE */
+.filters-box {
+  border-color: var(--secondary-color);
+  background: var(--bg-color-2);
+}
+
+.filters-label {
+  color: var(--secondary-color);
+}
+
+.filter-btn {
+  border-radius: 25px;
+  border: 2px solid var(--secondary-color) !important;
+  background: transparent;
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  padding: 4px 20px;
+}
+
+.filter-btn.active {
+  background: var(--secondary-color) !important;
+  color: var(--bg-color-1) !important;
+}
+
+/* MENU CARDS */
+.menu-card {
+  position: relative;
+  width: 100%;
+  max-width: 360px;      /* controls desktop card width */
+  aspect-ratio: 1 / 1; /* keeps your original tall ratio */
+  background-image: url(images/Group\ 8\ \(1\).svg);
+  background-size: cover;
+  background-position: top;
+  border-radius: 14px;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+
+/* @media (max-width: 767.98px) { 
+  .menu-card {
+    width: 80% !important;
+}
+}
+
+@media (max-width: 991.98px) { 
+  .menu-card {
+    width: 80% !important;
+    padding: 4rem;
+  }
+ }
+
+
+@media (max-width: 1199.98px) { 
+  .menu-card {
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 1399.98px) {
+  .menu-card {
+    width: 80% !important;
+  }
+} */
+
+/* Tilted photo frame */
+.menu-frame {
+  position: relative;
+
+  /* 1) Fixed aspect ratio so the frame ALWAYS keeps its shape */
+  aspect-ratio: 1.1 / 1.4;
+
+  /* 2) Keeps a nice size on desktop */
+  width: min(260px, 70%);
+
+  /* 3) Minimum size protection — NEVER shrink below this */
+  min-width: 200px;
+
+  /* styling */
+  border: 8px solid #e44d3a;
+  border-radius: 12px;
+  background: #ffe8ee;
+  transform: rotate(14deg);
+  overflow: hidden;
+
+  /* layout */
+  margin: 0 auto;
+  margin-bottom: 5%;
+  margin-left: 24%;
+  margin-top: 1% !important;
+}
+
+
+.menu-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Titles */
+.menu-title {
+  font-size: 1.8rem;
+  font-family: var(--font-headings);
+  color: var(--text-color-2);
+  margin-bottom: 0;
+  font-size: clamp(2.5rem, 1.5vw, 4rem);
+}
+
+.menu-subtitle {
+  color: var(--text-color-2);
+  font-size: clamp(1.2rem, 1.5vw, 2rem);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+/* Swiper Styling */
+.swiper {
+  padding-bottom: 5%;
+}
+.mySwiper {
+  width: 100%;
+  max-width: 100%; /* important!! */
+  margin: 0 auto;
+  padding-left: 10%;
+  padding-right: 10%;
+ 
+}
+
+
+/* .swiper-button-next,
+.swiper-button-prev {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;      
+  height: 50px;     
+}
+
+.swiper-button-prev {
+  left: 20%;   
+}
+
+.swiper-button-next {
+  right: 20%;  
+} */
+
+/* Make arrows visible */
+
+/* Force Bootstrap arrows */
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--secondary-color) !important;
+  width: 45px !important;
+  height: 45px !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 3rem !important;
+  color: var(--secondary-color) !important;
+}
+.swiper-pagination-bullet {
+  background: var(--secondary-color) !important;
+}
+@media (max-width: 992px) {
+  .menu-card {
+    max-width: 300px;
+  }
+  .menu-frame {
+    width: 75%;
+    margin-left: 12%;
+    margin-top: -10%;
+    transform: rotate(10deg);
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .menu-card {
+    max-width: 260px;
+  }
+  .menu-frame {
+    width: 80%;
+    margin-left: 8%;
+    margin-top: -8%;
+    transform: rotate(8deg);
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .menu-card {
+    max-width: 240px;
+  }
+  .menu-frame {
+    width: 85%;
+    margin-left: 5%;
+    margin-top: -6%;
+  }
+}
+
+/* ------------------------------------------------------------------------------- */
+
+/* --- GALLERY --- */
+.gallery-title {
+  font-size: clamp(4rem, 4.5vw, 6rem);
+  color: var(--secondary-color);
+  font-family: var(--font-headings);
+}
+#gallery{
+  background-color: var(--primary-color);
+}
+.gallery-box {
+  padding: 10px;
+  background: var(--secondary-color);
+  border-radius: 0;
+  border: 5px solid var(--secondary-color);
+}
+
+.gallery-box img {
+  border-radius: 4px;
+  width: 100%;
+  height: auto;
+}
+
+/* --- HOURS SECTION --- */
+
+.image-box {
+  aspect-ratio: 20 / 13;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive centered card */
+.centered-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 60%;
+  max-width: 400px;
+
+  background: var(--bg-color-1);
+  align-items: center;
+  padding: 1.5rem;
+}
+
+/* Typography */
+.hours-title {
+  font-size: clamp(2rem, 3vw, 4rem);
+  font-family: var(--font-headings);
+  color: var(--secondary-color);
+  margin-bottom: 1rem ;
+}
+
+.days-text {
+  font-size: clamp(1.2rem, 1.5vw, 2rem);
+  font-weight: 400;
+  color: var(--text-color-2);
+  margin: 0 0 0.5rem 0;
+}
+
+.hours-text {
+  font-size: clamp(1.2rem, 1.5vw, 2rem);
+  font-weight: 800;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+.hours-item {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hours-item p {
+  margin: 0;
+}
+
+/* Remove fixed 5rem padding */
+.card-content {
+  padding: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .centered-card {
+    padding: 1.5rem;
+    width: 60%;
+  }
+
+  .card-content {
+    padding: 0.5rem 1rem;
+  }
+
+  .image-box {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 480px) {
+  .centered-card {
+    padding: 1rem;
+    width: 80%;
+  }
+
+  .image-box {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.margine {
+  padding: 0.8rem;
+  background-color: var(--secondary-color);
+}
+/* Hide left image on mobile */
+@media (max-width: 768px) {
+  .image-box:first-child {
+    display: none;
+  }
+}
+
+/* Make right image full width */
+@media (max-width: 768px) {
+  .image-box {
+    width: 100% !important;
+    aspect-ratio: auto;
+  }
+}
+
+/* Keep card overlay and responsive */
+@media (max-width: 768px) {
+  .centered-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    padding: 1.5rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  .centered-card {
+    width: 60%;    
+    height: 90%;   /* smaller width */
+    max-width: 500px;
+    max-height: 700px; /* optional max size */
+    padding: 1.5rem;  /* adjust padding if needed */
+  }
+  .hours-title{
+    margin-top:1rem;
+    line-height: 0;
+  }
+  .days-text {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+  }
+
+  .hours-text {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+  }
+
+  .hours-item {
+    margin-bottom: 0.1rem;
+  }
+}
+
+
+.footer-section {
+  background-color: var(--primary-color); /* dark background */
+  color: var(--text-color-2);
+  font-family: var(--font-main);
+}
+
+.footer-section a {
+  color: var(--text-color-2);
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: var(--secondary-color); /* Bootstrap primary color on hover */
+}
+
+.contact-card {
+  background-color: var(--primary-color); /* dark background */
+  color: var(--text-color-2);
+  font-family: var(--font-main);
+  border: none !important;
+}
+.contact-info{
+  color:var(--text-color-2) !important;
+}
+.social-icons a {
+  color: var(--text-color-2)
+}
+
+.social-icons a:hover {
+  color: var(--secondary-color);
+}
+
+.contact-info a {
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .footer-section .row {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+.contact-card .card-title{
+  font-size: xx-large;
+  font-weight: bold;
+}
+.contact-info .card-title{
+  font-size: xx-large;
+  font-weight: bold;
+}
