@@ -153,41 +153,112 @@ font-family: 'Alumni Sans Inline One';
   position: relative;
 }
 
-/* STAR shape positioned behind the text */
+/* 📱 Mobile Fix — prevent zooming + cropping */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 55vh; /* prevents vertical stretch */
+    background-size: contain;   /* stops zooming */
+    background-repeat: no-repeat;
+    background-position: center top; /* keeps focus area visible */
+    background-color: #000; /* optional fill behind image */
+  }
+}
+
+/* Wrapper positions the star + text */
 .star-text-wrapper {
-  max-width: 35rem;             /* match size you want */
-}
-
-/* STAR image styling */
-.star-bg {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: clamp(300px, 50vw, 520px);
   height: auto;
-  display: block;
-  position: relative;
-  z-index: 1;                   /* behind text */
 }
 
-/* Text ON TOP of the star */
+/* Star background image */
+.star-bg {
+  width: clamp(300px, 50vw, 500px);
+  height: auto;
+  object-fit: contain;
+  display: block;        /* removes extra spacing */
+}
+
+/* Text over the star */
 .star-content {
   position: absolute;
+  width: 60%;            /* keeps text inside the star */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;                   /* above star */
-  padding: 0.5rem 0.1rem;
-  color: var(--text-color);     /* your color variables */
 }
-.star-content h1{
-    font-size: clamp(1.8rem, 3vw, 3.5rem);
-    margin-top: 1rem;
-    line-height: 1;
-    margin-bottom: 0;
+
+.star-content h1 {
+  font-size: clamp(16px, 5vw, 36px);
+  font-family: var(--font-headings);
+  line-height: 1.1;
 }
+
 .star-content p {
-     font-size: clamp(1rem, 1.5vw, 1.6rem);
-     margin-top: 0;
-  margin-bottom: 0.1rem;
+  font-size: clamp(10px, 3vw, 16px);
+  margin-top: 0.5rem;
+  line-height: 1.2;
+  font-weight: 500;
 }
+
+@media (max-width: 480px) {
+  /* .star-content h1 {
+    font-size: 0.8rem;
+  }
+  .star-content p {
+    font-size: 0.6rem;
+  } */
+   .star-content p{
+    font-size: clamp(9px, 3vw, 25px) !important;
+  }
+}
+/* MOBILE FIX */
+@media (max-width: 576px) {
+  .star-text-wrapper {
+    width: 60%;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  .star-contetn h1{
+    font-size: 1rem;
+  }
+  .star-content p{
+    font-size: clamp(8px, 2vw, 25px);
+  }
+}
+/* Mid-size screens: make star bigger */
+@media (min-width: 400px) and (max-width: 1000px) {
+  .star-text-wrapper {
+    width: 55%;
+  }
+  .star-contetn h1{
+    font-size: clamp(13px, 2vw, 25px);
+  }
+  .star-content p{
+    font-size: clamp(8px, 2vw, 25px);
+  }
+  .star-bg{
+    width: 120%;
+  }
+  }
+@media (min-width: 669px) and (max-width: 768px) {
+  .star-text-wrapper {
+    width: 60%;
+  }
+  .star-contetn h1{
+    font-size: clamp(13px, 2vw, 25px);
+  }
+  .star-content p{
+    font-size: clamp(8px, 2vw, 25px);
+  }
+  .star-bg{
+    width: 400px;
+  }
+  }
+
 
 
 .bg-parallax {
@@ -320,6 +391,7 @@ font-family: 'Alumni Sans Inline One';
   border-color: var(--secondary-color) !important;
   border-radius: 0 !important;
 }
+
 .menu-section .container-fluid{
     background-color: var(--bg-color-2);
     
@@ -592,6 +664,7 @@ background:var(--bg-color-2);
   font-family: var(--font-headings);
 }
 #gallery{
+  margin-top: 6rem;
   background-color: var(--primary-color);
 }
 .gallery-box {
